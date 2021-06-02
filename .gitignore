@@ -167,3 +167,4 @@ Thumbs.db
 .vscode/
 .idea/
 docker-compose.debug.yml
+data/
