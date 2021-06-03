@@ -1,6 +1,5 @@
 # Django Graphql example
-
-This is an example 
+This is a simple example of an API using Django Graphql with Docker
 
 ## 📑 Prerequisites
 
@@ -10,46 +9,64 @@ This is an example
 ## ⚙ Installing
 1. Clone the repository
     ```sh
-   https://github.com/Anderson-Pozo/flask-todo.git
+   https://github.com/Anderson-Pozo/django-graphql.git
    ```
-2. Create env directory with two files, local.env and mysql.env
+2. Create .env file
     ```sh
-    # local.env
-    DB_HOST=db
-    DB_USER=dev
-    DB_PASSWORD=1234
-    DB_NAME=todo_flask
-   
-   #mysql.env
-    MYSQL_ROOT_PASSWORD=1234
-    MYSQL_DATABASE=todo_flask
-    MYSQL_USER=dev
-    MYSQL_PASSWORD=1234
+    DB_HOST= dbpostgres
+    POSTGRES_PORT=5432
+    POSTGRES_DB=db
+    POSTGRES_USER=user_postgres
+    POSTGRES_PASSWORD=password
     ``` 
-2. In root directory run the command
+3. In root directory run the command
     ```sh
     docker-compose up -d
-    ```
-3. Run the following command to recreate the database schema
-    ```sh
-    docker exec -it web flask init-db
     ```
 4. Check if containers are running
     ```sh
    docker ps
    ```
-5. Open the browser in the port [localhost:5000](http://localhost:5000/)
 
+## ✔ Test API
+To test the API you can use Postman or any application
+that Graphql supports
 
-## 🚀 Deployment
-You can deploy this project on Heroku
-
+- Get all actors
+```sh
+query {
+    actors {
+        id
+        name
+        nationality
+        age
+    }
+}
+```
+- Create actor
+```sh
+    mutation{
+    createActor(input: 
+    {name: "Antonio Banderas", 
+    nationality: "Mexican", 
+    age: "32"})
+    {
+        actor{
+            id
+            name
+            nationality
+            age
+        }
+    }
+}
+```
+[Download the collection of API requests]()
 ## ⚙ Built with
 
-* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Web framework
-* [Docker](https://docs.docker.com/) -  App Containerization
-* [MySQL](https://dev.mysql.com/doc/) - Database engine
-* [Bootstrap 4](https://getbootstrap.com/docs/4.1/getting-started/introduction/) - CSS Framework
+* [Django](https://docs.djangoproject.com/en/3.2/)
+* [Docker](https://docs.docker.com/)
+* [Postgres](https://www.postgresql.org/docs/)
+* [Graphql - Graphene](https://docs.graphene-python.org/projects/django/en/latest/)
 
 ## 👦 Author
 
