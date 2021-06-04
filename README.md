@@ -60,7 +60,7 @@ query {
     }
 }
 ```
-[Download the collection of API requests]()
+[Download the collection of API requests](https://github.com/Anderson-Pozo/django-graphql/files/6595593/collection_Django-Graphql.zip)
 ## ⚙ Built with
 
 * [Django](https://docs.djangoproject.com/en/3.2/)
