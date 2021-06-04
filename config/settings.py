@@ -6,7 +6,7 @@ SECRET_KEY = 'h$ns&iwmu(9qxu+v9=v%#l_knqx32hn*8=3z@#)$9izg$1u*jq'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://graphene-django3.herokuapp.com']
 
 
 INSTALLED_APPS = [
